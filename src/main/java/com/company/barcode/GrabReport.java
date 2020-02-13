@@ -76,14 +76,14 @@ public class GrabReport {
         //JSONObject jsonAllergenHierarchy = jsonProduct.getJSONObject(
         if (responseContent.contains("allergens_hierarchy")){allergens = foodField.getJSONObject("product").getJSONArray("allergens_hierarchy").toString();}
         else if (responseContent.contains("allergens_from_ingredients")){allergens = foodField.getJSONObject("product").getString("allergens_from_ingredients");}
-        System.out.printf("\n%20s\n",productName);
-        System.out.printf("\n%28s\n",allergens.replace("en:", "")
+        System.out.println(productName);
+        System.out.println(allergens.replace("en:", "")
                 .replace("\"", "")
                 .replace(",", " ")
                 .replace("[", "")
                 .replace("]", ""));
 
-        return productName;
+        return productName + " returned";
     }
 }
 
